@@ -1,0 +1,10 @@
+I = imread('sears.jpg');
+subplot(2,2,1); 
+imshow(I);
+
+h = fspecial('gaussian', 7, 5);
+processedImage = imfilter(I,h,'replicate');
+subplot(2,2,2); 
+hAxes = gca;
+imshow(processedImage,'Parent',hAxes);
+title('Motion Blurred Image');
